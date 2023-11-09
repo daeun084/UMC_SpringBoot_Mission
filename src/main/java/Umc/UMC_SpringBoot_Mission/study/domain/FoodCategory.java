@@ -1,12 +1,12 @@
 package Umc.UMC_SpringBoot_Mission.study.domain;
 
+import Umc.UMC_SpringBoot_Mission.study.domain.mapping.PreferFood;
 import com.fasterxml.jackson.databind.ser.Serializers;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,5 +17,9 @@ public class FoodCategory extends Serializers.Base {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long foodCategoryId;
     private String foodName;
+
+    //PreferFood 양방향 연관관계
+    @OneToMany(mappedBy = "foodCategory", cascade = CascadeType.ALL)
+    private List<PreferFood> preferFoodList = new ArrayList<>();
     
 }

@@ -1,10 +1,13 @@
 package Umc.UMC_SpringBoot_Mission.study.domain;
 
 import Umc.UMC_SpringBoot_Mission.study.domain.common.BaseEntity;
+import Umc.UMC_SpringBoot_Mission.study.domain.mapping.PreferFood;
 import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,4 +24,12 @@ public class Store extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")
     private Region region;
+
+    //Review 양방향 연관관계
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+    private List<Review> reviewList = new ArrayList<>();
+
+    //Mission 양방향 연관관계
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+    private List<Mission> missionList = new ArrayList<>();
 }
