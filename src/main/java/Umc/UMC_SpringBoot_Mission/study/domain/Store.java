@@ -3,10 +3,7 @@ package Umc.UMC_SpringBoot_Mission.study.domain;
 import Umc.UMC_SpringBoot_Mission.study.domain.common.BaseEntity;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -21,5 +18,7 @@ public class Store extends BaseEntity {
     private LocalDate openTime; //영업시간
     private String address;
 
-    //지역id
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "region_id")
+    private Region region;
 }

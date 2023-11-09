@@ -3,10 +3,7 @@ package Umc.UMC_SpringBoot_Mission.study.domain;
 import Umc.UMC_SpringBoot_Mission.study.domain.common.BaseEntity;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -18,7 +15,13 @@ public class Review extends BaseEntity {
     private Long reviewId;
     private Float stars; //별점
     private String contents; //리뷰내용
-    //회원id
-    //가게id
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "store_id")
+    private Store store;
 
 }

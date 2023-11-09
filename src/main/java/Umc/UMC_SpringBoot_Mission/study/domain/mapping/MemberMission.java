@@ -1,5 +1,7 @@
 package Umc.UMC_SpringBoot_Mission.study.domain.mapping;
 
+import Umc.UMC_SpringBoot_Mission.study.domain.Member;
+import Umc.UMC_SpringBoot_Mission.study.domain.Mission;
 import Umc.UMC_SpringBoot_Mission.study.domain.common.BaseEntity;
 import Umc.UMC_SpringBoot_Mission.study.domain.enums.MissionStatus;
 import lombok.*;
@@ -16,7 +18,13 @@ public class MemberMission extends BaseEntity {
     private Long userMissionId;
     @Enumerated(EnumType.STRING)
     private MissionStatus missionStatus;
-    //회원id
-    //미션id
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "mission_id")
+    private Mission mission;
 
 }
