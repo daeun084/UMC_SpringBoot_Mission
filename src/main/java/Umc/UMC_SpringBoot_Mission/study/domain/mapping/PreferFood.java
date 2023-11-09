@@ -1,4 +1,4 @@
-package Umc.UMC_SpringBoot_Mission.study.domain;
+package Umc.UMC_SpringBoot_Mission.study.domain.mapping;
 
 import Umc.UMC_SpringBoot_Mission.study.domain.common.BaseEntity;
 import lombok.*;
