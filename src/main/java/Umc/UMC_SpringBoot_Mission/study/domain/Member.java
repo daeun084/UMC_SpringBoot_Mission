@@ -1,5 +1,6 @@
 package Umc.UMC_SpringBoot_Mission.study.domain;
 
+import Umc.UMC_SpringBoot_Mission.study.domain.common.BaseEntity;
 import Umc.UMC_SpringBoot_Mission.study.domain.enums.Gender;
 import Umc.UMC_SpringBoot_Mission.study.domain.enums.LoginType;
 import lombok.*;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Builder //Builder pattern을 사용하기 위함
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Member {
+public class Member extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) //통신하는 db에 따름
     private Long memberId;
     private String name;

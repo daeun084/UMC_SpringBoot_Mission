@@ -1,5 +1,6 @@
 package Umc.UMC_SpringBoot_Mission.study.domain;
 
+import Umc.UMC_SpringBoot_Mission.study.domain.common.BaseEntity;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -13,7 +14,7 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Store {
+public class Store extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long storeId;
     private String storeName;

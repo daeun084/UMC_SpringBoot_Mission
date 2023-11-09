@@ -1,5 +1,6 @@
 package Umc.UMC_SpringBoot_Mission.study.domain;
 
+import Umc.UMC_SpringBoot_Mission.study.domain.common.BaseEntity;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -12,14 +13,12 @@ import javax.persistence.Id;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Review {
+public class Review extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewId;
     private Float stars; //별점
     private String contents; //리뷰내용
     //회원id
     //가게id
-    //생성날짜
-    //갱신날짜
 
 }

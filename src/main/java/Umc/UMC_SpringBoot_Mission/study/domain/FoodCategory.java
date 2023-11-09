@@ -1,5 +1,6 @@
 package Umc.UMC_SpringBoot_Mission.study.domain;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -12,7 +13,7 @@ import javax.persistence.Id;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class FoodCategory {
+public class FoodCategory extends Serializers.Base {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long foodCategoryId;
     private String foodName;
