@@ -15,7 +15,11 @@ import java.util.List;
 public class Review extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewId;
+
+    @Column(nullable = false)
     private Float stars; //별점
+
+    @Column(nullable = false)
     private String contents; //리뷰내용
 
     @ManyToOne(fetch = FetchType.LAZY)

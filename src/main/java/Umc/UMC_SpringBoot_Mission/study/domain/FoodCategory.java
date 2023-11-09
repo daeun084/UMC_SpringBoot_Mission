@@ -16,6 +16,8 @@ import java.util.List;
 public class FoodCategory extends Serializers.Base {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long foodCategoryId;
+
+    @Column(nullable = false)
     private String foodName;
 
     //PreferFood 양방향 연관관계

@@ -18,8 +18,14 @@ import java.util.List;
 public class Mission extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long missionId;
+
+    @Column(nullable = false)
     private String content;
+
+    @Column(nullable = false)
     private Long point; //reward
+
+    @Column(nullable = false)
     private Long confirmNum; //사장님 인증번호
     private LocalDate deadline; //마감날짜
 

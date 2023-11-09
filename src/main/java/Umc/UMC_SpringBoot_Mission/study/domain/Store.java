@@ -17,6 +17,8 @@ import java.util.List;
 public class Store extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long storeId;
+
+    @Column(nullable = false)
     private String storeName;
     private LocalDate openTime; //영업시간
     private String address;

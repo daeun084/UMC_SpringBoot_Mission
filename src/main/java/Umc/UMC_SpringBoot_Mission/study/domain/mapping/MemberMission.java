@@ -16,7 +16,9 @@ import javax.persistence.*;
 public class MemberMission extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userMissionId;
+
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private MissionStatus missionStatus;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -15,6 +15,8 @@ import java.util.List;
 public class Region extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long regionId;
+
+    @Column(nullable = false)
     private String regionName;
 
     //Store 양방향 연관관계

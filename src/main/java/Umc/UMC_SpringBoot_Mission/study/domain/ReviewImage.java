@@ -14,6 +14,8 @@ import javax.persistence.*;
 public class ReviewImage extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewImageId;
+
+    @Column(nullable = false)
     private Text imageUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)

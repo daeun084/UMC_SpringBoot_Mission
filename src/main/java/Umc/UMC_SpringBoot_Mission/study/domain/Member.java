@@ -27,9 +27,12 @@ public class Member extends BaseEntity {
 
     @Enumerated(EnumType.STRING) //enum을 Entity에 적용
     private LoginType loginType;
+
+    @Column(nullable = false, length = 50)
     private String email;
 
     @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "VARCHAR(10)")
     private Gender gender;
     private String phoneNum;
 
