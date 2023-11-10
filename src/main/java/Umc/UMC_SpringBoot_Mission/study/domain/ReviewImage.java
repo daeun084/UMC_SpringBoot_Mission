@@ -15,10 +15,10 @@ public class ReviewImage extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewImageId;
 
-    @Column(nullable = false)
-    private Text imageUrl;
+    @Column(nullable = false, name = "image_url")
+    private String imageUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "review_id")
-    private ReviewImage reviewImage;
+    private Review review;
 }

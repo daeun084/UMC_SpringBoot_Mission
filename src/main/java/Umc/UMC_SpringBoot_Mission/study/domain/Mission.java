@@ -34,6 +34,6 @@ public class Mission extends BaseEntity {
     private Store store;
 
     //MemberMission 양방향 연관관계
-    @OneToMany(mappedBy = "misson", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "mission", cascade = CascadeType.ALL)
     private List<MemberMission> memberMissionList = new ArrayList<>();
 }
