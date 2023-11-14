@@ -26,5 +26,7 @@ public class TempRestController {
     public ApiResponse<TempResponse.TempExceptionDTO> exceptionAPI(@RequestParam Integer flag){
         tempQueryService.CheckFlag(flag);
         return ApiResponse.onSuccess(TempConverter.toTempExceptionDTO(flag));
+        //쿼리 스트링으로 flag를 받은 다음 2면 Exception 발생
+        //Exception 안터지면 onSuccess 함수 호출
     }
 }
