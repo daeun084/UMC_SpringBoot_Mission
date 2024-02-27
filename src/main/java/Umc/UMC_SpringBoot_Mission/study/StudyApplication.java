@@ -1,4 +1,4 @@
-package Umc.UMC_SpringBoot_Mission;
+package Umc.UMC_SpringBoot_Mission.study;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing
-public class UmcSpringBootMissionApplication {
+public class StudyApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(StudyApplication.class, args);
 
-	public static void main(String[] args) {
-		SpringApplication.run(UmcSpringBootMissionApplication.class, args);
-	}
-
+    }
 }
